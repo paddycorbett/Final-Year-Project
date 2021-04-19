@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <TextView
+        android:id="@+id/textViewSR18"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR17"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR18" />
+
+    <TextView
+        android:id="@+id/textViewSR17"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR16"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR17" />
+
+    <TextView
+        android:id="@+id/textViewSR16"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR15"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR16" />
+
+    <TextView
+        android:id="@+id/textViewSR15"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR14"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR15" />
+
+    <TextView
+        android:id="@+id/textViewSR14"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR13"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR14" />
+
+    <TextView
+        android:id="@+id/textViewSR13"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR12"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR13" />
+
+    <TextView
+        android:id="@+id/textViewSR12"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR11"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR12" />
+
+    <TextView
+        android:id="@+id/textViewSR11"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR10"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR11" />
+
+    <TextView
+        android:id="@+id/textViewSR10"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR10" />
+
+    <TextView
+        android:id="@+id/textViewHR18"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="18"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR17"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR9" />
+
+    <TextView
+        android:id="@+id/textViewHR17"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="17"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR16"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR8" />
+
+    <TextView
+        android:id="@+id/textViewHR16"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="16"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR15"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR7" />
+
+    <TextView
+        android:id="@+id/textViewHR15"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="15"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR14"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR6" />
+
+    <TextView
+        android:id="@+id/textViewHR14"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="14"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR13"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR5" />
+
+    <TextView
+        android:id="@+id/textViewHR13"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="13"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR12"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR4" />
+
+    <TextView
+        android:id="@+id/textViewHR12"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="12"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR11"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR3" />
+
+    <TextView
+        android:id="@+id/textViewHR11"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="11"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR10"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR2" />
+
+    <TextView
+        android:id="@+id/textViewSR9"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR8"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR9" />
+
+    <TextView
+        android:id="@+id/textViewSR8"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR7"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR8" />
+
+    <TextView
+        android:id="@+id/textViewSR7"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR6"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR7" />
+
+    <TextView
+        android:id="@+id/textViewSR6"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR5"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR6" />
+
+    <TextView
+        android:id="@+id/textViewSR5"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR4"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR5" />
+
+    <TextView
+        android:id="@+id/textViewSR4"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR4" />
+
+    <TextView
+        android:id="@+id/textViewSR2"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR2" />
+
+    <TextView
+        android:id="@+id/textViewHR9"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR8"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR8"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="8"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR7"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR7"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="7"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR6"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR6"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR5"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR5"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR4"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR4"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR1"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewHR2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR10"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSR1" />
+
+    <TextView
+        android:id="@+id/textViewHR2"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:text="2"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewHR3"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:background="#BC050505"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHR2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDatePreviousRound" />
+
+    <TextView
+        android:id="@+id/textViewSR1"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR1" />
+
+    <TextView
+        android:id="@+id/textViewSR3"
+        android:layout_width="45.5dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/textViewSR2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHR3" />
+
+    <TextView
+        android:id="@+id/textViewDatePreviousRound"
+        android:layout_width="410dp"
+        android:layout_height="20dp"
+        android:background="#FFEA00"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHR5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"/>
+
+
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

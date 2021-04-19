@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "612345115969",
+    "firebase_url": "https://scorddatabase.firebaseio.com",
+    "project_id": "scorddatabase",
+    "storage_bucket": "scorddatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612345115969:android:6cbee32e9971d44c0a9dc0",
+        "android_client_info": {
+          "package_name": "com.fyp.scord"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612345115969-n50d7r6bv9hahpc73aq8d9f1fcj0vdom.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fyp.scord",
+            "certificate_hash": "c16d28bb00e9c55c0bb560f0996d5978c6a072af"
+          }
+        },
+        {
+          "client_id": "612345115969-t1rja5k31qllk1denb5kqn0d7tfu44th.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs9dZSKgujHanhVdjF9Jl1CrdWPUKftA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612345115969-t1rja5k31qllk1denb5kqn0d7tfu44th.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

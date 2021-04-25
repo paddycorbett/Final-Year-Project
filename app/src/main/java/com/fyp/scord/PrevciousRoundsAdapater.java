@@ -10,42 +10,41 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MyAdapter<ItemClickListener> extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
+public class PrevciousRoundsAdapater<ItemClickListener> extends RecyclerView.Adapter<PrevciousRoundsAdapater.MyViewHolder>{
 
-    private ArrayList<Round> mData;
     private ArrayList<RoundLocal> roundData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
-    private Round round;
-    private Round roundLocal;
+    private RoundLocal roundLocal;
+
+
 
 
 
     // inflates the row layout from xml when needed
     @NonNull
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PrevciousRoundsAdapater.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.row_layout, parent, false);
+        View view = inflater.inflate(R.layout.scorecard_layout, parent, false);
         return new MyViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
-        round = mData.get(position);
-        holder.hole1.setText((CharSequence) round);
-
+    public void onBindViewHolder(@NonNull PrevciousRoundsAdapater.MyViewHolder holder, int position) {
+        roundLocal = roundData.get(position);
+        holder.hole1.setText((CharSequence) roundLocal);
 
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return roundData.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-       TextView hole1;
+        TextView hole1;
         TextView hole2;
         TextView hole3;
         TextView hole4;
@@ -64,6 +63,9 @@ public class MyAdapter<ItemClickListener> extends RecyclerView.Adapter<MyAdapter
         TextView hole17;
         TextView hole18;
         TextView date;
+        TextView front9;
+        TextView back9;
+        TextView score;
 
 
 
@@ -88,30 +90,36 @@ public class MyAdapter<ItemClickListener> extends RecyclerView.Adapter<MyAdapter
             hole17 = itemView.findViewById(R.id.tvSR17);
             hole18 = itemView.findViewById(R.id.tvSR18);
             date = itemView.findViewById(R.id.tvDatePreviousRound);
+            front9 = itemView.findViewById(R.id.tvOut);
+            back9 = itemView.findViewById(R.id.tvIn);
+            score = itemView.findViewById(R.id.tvTotal);
 
 
 
+            roundLocal.setHole1(Integer.parseInt(hole1.toString()));
+            roundLocal.setHole2(Integer.parseInt(hole2.toString()));
+            roundLocal.setHole3(Integer.parseInt(hole3.toString()));
+            roundLocal.setHole4(Integer.parseInt(hole4.toString()));
+            roundLocal.setHole5(Integer.parseInt(hole5.toString()));
+            roundLocal.setHole6(Integer.parseInt(hole6.toString()));
+            roundLocal.setHole7(Integer.parseInt(hole7.toString()));
+            roundLocal.setHole8(Integer.parseInt(hole8.toString()));
+            roundLocal.setHole9(Integer.parseInt(hole9.toString()));
+            roundLocal.setHole10(Integer.parseInt(hole10.toString()));
+            roundLocal.setHole11(Integer.parseInt(hole11.toString()));
+            roundLocal.setHole12(Integer.parseInt(hole12.toString()));
+            roundLocal.setHole13(Integer.parseInt(hole13.toString()));
+            roundLocal.setHole14(Integer.parseInt(hole14.toString()));
+            roundLocal.setHole15(Integer.parseInt(hole15.toString()));
+            roundLocal.setHole16(Integer.parseInt(hole16.toString()));
+            roundLocal.setHole17(Integer.parseInt(hole17.toString()));
+            roundLocal.setHole18(Integer.parseInt(hole18.toString()));
+            roundLocal.setDate(date.toString());
+            roundLocal.setFront9();
+            roundLocal.setBack9();
+            roundLocal.setScore();
 
 
-            round.setHole1(Integer.parseInt(hole1.toString()));
-            round.setHole2(Integer.parseInt(hole2.toString()));
-            round.setHole3(Integer.parseInt(hole3.toString()));
-            round.setHole4(Integer.parseInt(hole4.toString()));
-            round.setHole5(Integer.parseInt(hole5.toString()));
-            round.setHole6(Integer.parseInt(hole6.toString()));
-            round.setHole7(Integer.parseInt(hole7.toString()));
-            round.setHole8(Integer.parseInt(hole8.toString()));
-            round.setHole9(Integer.parseInt(hole9.toString()));
-            round.setHole10(Integer.parseInt(hole10.toString()));
-            round.setHole11(Integer.parseInt(hole11.toString()));
-            round.setHole12(Integer.parseInt(hole12.toString()));
-            round.setHole13(Integer.parseInt(hole13.toString()));
-            round.setHole14(Integer.parseInt(hole14.toString()));
-            round.setHole15(Integer.parseInt(hole15.toString()));
-            round.setHole16(Integer.parseInt(hole16.toString()));
-            round.setHole17(Integer.parseInt(hole17.toString()));
-            round.setHole18(Integer.parseInt(hole18.toString()));
-            round.setDate(date.toString());
 
             itemView.setOnClickListener((View.OnClickListener) this);
         }

@@ -1,3 +1,4 @@
+
 package com.fyp.scord;
 
 import androidx.annotation.NonNull;
@@ -6,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -17,13 +19,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SelectCourseActivity extends AppCompatActivity {
 
     Spinner spinner;
     DatabaseReference dbReference;
-    ArrayList<String> courses;
+    List<String> courses;
     Button startRound;
+    FirebaseDatabase fbDatabase;
+
+
 
 
     @Override
@@ -34,19 +40,23 @@ public class SelectCourseActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         startRound = findViewById(R.id.buttonStartRound);
         courses = new ArrayList<>();
+        //courses.add("Bridge");
+       // courses.add("Dublin");
+        //courses.add("Cork");
+
 
         dbReference = FirebaseDatabase.getInstance().getReference();
         dbReference.child("Course").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                for(DataSnapshot childSnapshot:snapshot.getChildren())
-                {
-                    String spinnerName = childSnapshot.child("name").getValue(String.class);
-                    courses.add(spinnerName);
+
+              for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                  String spinnerName = childSnapshot.child("name").getValue(String.class);
+                   courses.add(spinnerName);
                 }
 
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(SelectCourseActivity.this, android.R.layout.simple_spinner_item,courses);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(SelectCourseActivity.this, android.R.layout.simple_spinner_item, courses);
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
                 spinner.setAdapter(arrayAdapter);
             }
@@ -56,6 +66,8 @@ public class SelectCourseActivity extends AppCompatActivity {
 
             }
         });
+
+        
 
         startRound.setOnClickListener(new View.OnClickListener() {
             @Override

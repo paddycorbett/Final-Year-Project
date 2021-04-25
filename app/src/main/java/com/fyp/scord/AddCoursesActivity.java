@@ -56,7 +56,7 @@ public class AddCoursesActivity extends AppCompatActivity {
                 String addressStr = address.getText().toString();
                 String numberStr = number.getText().toString();
 
-                course = new Course(nameStr,addressStr,numberStr);
+                course = new Course(nameStr,addressStr,numberStr,null);
                 mDatabase = FirebaseDatabase.getInstance().getReference("Course");
                 String key = mDatabase.push().getKey();
                 mDatabase.child(key).setValue(course).addOnSuccessListener(new OnSuccessListener<Void>() {

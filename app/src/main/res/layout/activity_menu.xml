@@ -91,13 +91,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/scord_logo_no_bck" />
 
-    <Button
-        android:id="@+id/buttonSelectCourse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:text="Select Course"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGolfCourses"
-        tools:layout_editor_absoluteX="272dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,25 +40,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
-            hole1 = itemView.findViewById(R.id.textViewSR1);
-            hole2 = itemView.findViewById(R.id.textViewSR2);
-            hole3 = itemView.findViewById(R.id.textViewSR3);
-            hole4 = itemView.findViewById(R.id.textViewSR4);
-            hole5 = itemView.findViewById(R.id.textViewSR5);
-            hole6 = itemView.findViewById(R.id.textViewSR6);
-            hole7 = itemView.findViewById(R.id.textViewSR7);
-            hole8 = itemView.findViewById(R.id.textViewSR8);
-            hole9 = itemView.findViewById(R.id.textViewSR9);
-            hole10 = itemView.findViewById(R.id.textViewSR10);
-            hole11 = itemView.findViewById(R.id.textViewSR11);
-            hole12 = itemView.findViewById(R.id.textViewSR12);
-            hole13 = itemView.findViewById(R.id.textViewSR13);
-            hole14 = itemView.findViewById(R.id.textViewSR14);
-            hole15 = itemView.findViewById(R.id.textViewSR15);
-            hole16 = itemView.findViewById(R.id.textViewSR16);
-            hole17 = itemView.findViewById(R.id.textViewSR17);
-            hole18 = itemView.findViewById(R.id.textViewSR18);
-            date = itemView.findViewById(R.id.textViewDatePreviousRound);
+            hole1 = itemView.findViewById(R.id.tvSR1);
+            hole2 = itemView.findViewById(R.id.tvSR2);
+            hole3 = itemView.findViewById(R.id.tvSR3);
+            hole4 = itemView.findViewById(R.id.tvSR4);
+            hole5 = itemView.findViewById(R.id.tvSR5);
+            hole6 = itemView.findViewById(R.id.tvSR6);
+            hole7 = itemView.findViewById(R.id.tvSR7);
+            hole8 = itemView.findViewById(R.id.tvSR8);
+            hole9 = itemView.findViewById(R.id.tvSR9);
+            hole10 = itemView.findViewById(R.id.tvSR10);
+            hole11 = itemView.findViewById(R.id.tvSR11);
+            hole12 = itemView.findViewById(R.id.tvSR12);
+            hole13 = itemView.findViewById(R.id.tvSR13);
+            hole14 = itemView.findViewById(R.id.tvSR14);
+            hole15 = itemView.findViewById(R.id.tvSR15);
+            hole16 = itemView.findViewById(R.id.tvSR16);
+            hole17 = itemView.findViewById(R.id.tvSR17);
+            hole18 = itemView.findViewById(R.id.tvSR18);
+            date = itemView.findViewById(R.id.tvDatePreviousRound);
 
         }
     }

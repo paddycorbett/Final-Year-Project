@@ -53,7 +53,7 @@ public RoundLocal(){}
     public void setScore()
     {
 
-        this.score =getScore(getHole1(),getHole2(),getHole3(),getHole4(),getHole5(),getHole6(),getHole7(),getHole8(),getHole9(),getHole10(),getHole11(),getHole12(),getHole13(),getHole14(),getHole15(),getHole16(),getHole17(),getHole18());
+        this.score =getS(getHole1(),getHole2(),getHole3(),getHole4(),getHole5(),getHole6(),getHole7(),getHole8(),getHole9(),getHole10(),getHole11(),getHole12(),getHole13(),getHole14(),getHole15(),getHole16(),getHole17(),getHole18());
     }
 
 

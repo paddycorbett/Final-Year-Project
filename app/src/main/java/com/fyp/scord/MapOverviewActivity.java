@@ -322,7 +322,7 @@ public class MapOverviewActivity extends FragmentActivity implements OnMapReadyC
                 hole = new LatLng(teeLatD, teeLongD);
                 tee = new LatLng(holeLatD,holeLongD);
 
-                LatLng golfCourse = new LatLng(53.20427465625057, -6.784705644114457);
+                LatLng golfCourse = new LatLng(holeLatD, holeLongD);
                 mMap.addPolyline(new PolylineOptions().add(tee,hole).color(Color.RED).width(5));
                 //googleMap.moveCamera(CameraUpdateFactory.newLatLng(golfCourse));
                 CameraPosition cameraPosition= new CameraPosition.Builder().target(golfCourse).zoom(16).build();

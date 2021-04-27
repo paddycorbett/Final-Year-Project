@@ -42,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-        userDisplay.setText(username);
+        //userDisplay.setText(username);
 
         round.setOnClickListener(new View.OnClickListener() {
             @Override

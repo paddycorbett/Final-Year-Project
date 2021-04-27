@@ -91,4 +91,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/scord_logo_no_bck" />
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,7 @@ public class PreviousRoundsActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private FirebaseUser user;
     private  DatabaseReference mDatabase;
-    private ArrayList<Round> rounds = new ArrayList<>();
+    private ArrayList<RoundLocal> rounds = new ArrayList<>();
     private String userUid;
 
 
@@ -60,7 +60,7 @@ public class PreviousRoundsActivity extends AppCompatActivity {
       mRecylerView = findViewById(R.id.rvRounds);
       mRecylerView.setHasFixedSize(true);
       mLayoutManager = new LinearLayoutManager(this);
-      mAdapter = new Adapter(rounds);
+      mAdapter = new PastRoundsAdapter(rounds);
 
       mRecylerView.setLayoutManager(mLayoutManager);
       mRecylerView.setAdapter(mAdapter);
@@ -88,7 +88,7 @@ public class PreviousRoundsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot roundSnapshot : snapshot.getChildren()){
-                    Round roundObj = roundSnapshot.getValue(Round.class);
+                    RoundLocal roundObj = roundSnapshot.getValue(RoundLocal.class);
                     rounds.add(roundObj);
                     mAdapter.notifyItemInserted(rounds.size()-1);
 

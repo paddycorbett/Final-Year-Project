@@ -10,12 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    private ArrayList<Round> mExampleList;
+public class PastRoundsAdapter extends RecyclerView.Adapter<PastRoundsAdapter.ViewHolder> {
 
-    public static  class ViewHolder extends RecyclerView.ViewHolder
+    private ArrayList<RoundLocal> roundData;
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder
     {
-
         TextView hole1;
         TextView hole2;
         TextView hole3;
@@ -35,10 +36,18 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         TextView hole17;
         TextView hole18;
         TextView date;
+        TextView front9;
+        TextView back9;
+        TextView score;
 
 
-        public ViewHolder(View itemView) {
+
+
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+
 
             hole1 = itemView.findViewById(R.id.tvSR1);
             hole2 = itemView.findViewById(R.id.tvSR2);
@@ -59,30 +68,55 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             hole17 = itemView.findViewById(R.id.tvSR17);
             hole18 = itemView.findViewById(R.id.tvSR18);
             date = itemView.findViewById(R.id.tvDatePreviousRound);
+            front9 = itemView.findViewById(R.id.tvOut);
+            back9 = itemView.findViewById(R.id.tvIn);
+            score = itemView.findViewById(R.id.tvTotal);
 
         }
     }
 
+    public PastRoundsAdapter(ArrayList<RoundLocal> exampleList){roundData = exampleList;}
 
 
-    public Adapter(ArrayList<Round> exampleList){
-        mExampleList = exampleList;
-    }
 
-
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public PastRoundsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.scorecard_layout,parent,false);
         ViewHolder vh = new ViewHolder(v);
-        return  vh;
+        return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull PastRoundsAdapter.ViewHolder holder, int position)
     {
 
-        Round roundItem = mExampleList.get(position);
+        RoundLocal roundItem = roundData.get(position);
+
+        /**
+        int h1 = Integer.parseInt(holder.hole1.getText().toString());
+        int h2 = Integer.parseInt(holder.hole2.getText().toString());
+        int h3 = Integer.parseInt(holder.hole3.getText().toString());
+        int h4 = Integer.parseInt(holder.hole4.getText().toString());
+        int h5 = Integer.parseInt(holder.hole5.getText().toString());
+        int h6 = Integer.parseInt(holder.hole6.getText().toString());
+        int h7 = Integer.parseInt(holder.hole7.getText().toString());
+        int h8 = Integer.parseInt(holder.hole7.getText().toString());
+        int h9 = Integer.parseInt(holder.hole9.getText().toString());
+        int h10 = Integer.parseInt(holder.hole10.getText().toString());
+        int h11 = Integer.parseInt(holder.hole11.getText().toString());
+        int h12 = Integer.parseInt(holder.hole12.getText().toString());
+        int h13 = Integer.parseInt(holder.hole13.getText().toString());
+        int h14 = Integer.parseInt(holder.hole14.getText().toString());
+        int h15 = Integer.parseInt(holder.hole15.getText().toString());
+        int h16 = Integer.parseInt(holder.hole16.getText().toString());
+        int h17 = Integer.parseInt(holder.hole17.getText().toString());
+        int h18 = Integer.parseInt(holder.hole18.getText().toString());
+**/
+
+
+
+
+
 
         holder.hole1.setText(String.valueOf(roundItem.getHole1()));
         holder.hole2.setText(String.valueOf(roundItem.getHole2()));
@@ -104,11 +138,18 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.hole18.setText(String.valueOf(roundItem.getHole18()));
         holder.date.setText(roundItem.getDate());
 
+        roundItem.setFront9();
+        roundItem.setBack9();
+        roundItem.setScore();
+       holder.front9.setText(String.valueOf(roundItem.getFront9()));
+       holder.back9.setText(String.valueOf(roundItem.getBack9()));
+        holder.score.setText(String.valueOf(roundItem.getScore()));
+
 
     }
 
     @Override
     public int getItemCount() {
-        return mExampleList.size();
+       return roundData.size();
     }
 }

@@ -14,8 +14,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class AccountActivity extends AppCompatActivity {
 
     FirebaseUser user ;
-    EditText usernameId;
-    Button update;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +22,6 @@ public class AccountActivity extends AppCompatActivity {
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        usernameId = findViewById(R.id.editTextName);
-
-        update = findViewById(R.id.buttonUpdateAccount);
-
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = usernameId.getText().toString();
-                UserProfileChangeRequest nameUpdate = new UserProfileChangeRequest.Builder().setDisplayName(name).build();
-                user.updateProfile(nameUpdate);
-
-            }
-        });
 
 
 

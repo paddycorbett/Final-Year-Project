@@ -21,6 +21,7 @@ public class MenuActivity extends AppCompatActivity {
     TextView userDisplay;
     Button logOut;
     Button courses;
+    Button stats;
 
 
 
@@ -37,6 +38,7 @@ public class MenuActivity extends AppCompatActivity {
         userDisplay = findViewById(R.id.textViewUserDisplayName);
         logOut = findViewById(R.id.buttonLogOut);
         courses = findViewById(R.id.buttonGolfCourses);
+        stats = findViewById(R.id.buttonStats);
 
         String username = mAuth.getCurrentUser().getDisplayName();
 
@@ -83,6 +85,13 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuActivity.this, CoursesActivity.class);
+                startActivity(i);
+            }
+        });
+        stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuActivity.this, StatsActivity.class);
                 startActivity(i);
             }
         });

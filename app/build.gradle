@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.2'
 
     implementation 'com.google.firebase:firebase-core:18.0.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
 
     //add this ling
 

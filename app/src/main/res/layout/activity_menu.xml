@@ -59,6 +59,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonPreviousRounds" />
 
+    <Button
+        android:id="@+id/buttonStats"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="#A40A0B0A"
+        android:text="User Stats"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGolfCourses" />
+
     <TextView
         android:id="@+id/textViewUserDisplayName"
         android:layout_width="wrap_content"

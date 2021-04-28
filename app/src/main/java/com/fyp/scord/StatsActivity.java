@@ -96,19 +96,18 @@ public class StatsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                for (DataSnapshot roundSnapshot : snapshot.getChildren()){
+                for (DataSnapshot roundSnapshot : snapshot.getChildren()) {
                     roundObj = roundSnapshot.getValue(RoundLocal.class);
                     roundObj.setFront9();
                     roundObj.setBack9();
                     roundObj.setScore();
                     scores.add(roundObj.getScore());
-                   // scoresBarEntry.add(new BarEntry(75,6));
-                   rounds.add(roundObj);
+                    // scoresBarEntry.add(new BarEntry(75,6));
+                    rounds.add(roundObj);
 
                 }
                 CalculateScore();
                 BarDataSet bardataset = new BarDataSet(entries, "Rounds");
-
 
 
                 BarData data = new BarData(labels, bardataset);
@@ -116,7 +115,6 @@ public class StatsActivity extends AppCompatActivity {
                 barChart.setDescription("");  // set the description
                 bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
                 barChart.animateY(2000);
-                Toast.makeText(StatsActivity.this,String.valueOf(scores.get(0)),Toast.LENGTH_SHORT).show();
             }
 
             @Override

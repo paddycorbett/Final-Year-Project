@@ -77,6 +77,9 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
     TextView hole17;
     TextView hole18;
 
+    String gCourse;
+    String userUid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +90,8 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
         mDatabase =  FirebaseDatabase.getInstance().getReference();
 
         Intent intent = getIntent();
-        final String gCourse = intent.getStringExtra("Course");
-        final String userUid = user.getUid().toString();
+        gCourse = intent.getStringExtra("Course");
+        userUid = user.getUid().toString();
 
         Date d = new Date();
         final CharSequence d1  = DateFormat.format("MMMM d, yyyy ", d.getTime());
@@ -298,7 +301,7 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-                round = new Round(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I,d2);
+                round = new Round(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I,d2,gCourse);
                 mDatabase = FirebaseDatabase.getInstance().getReference("Round").child(userUid);
                 String key = mDatabase.push().getKey();
                 mDatabase.child(key).setValue(round).addOnSuccessListener(new OnSuccessListener<Void>() {

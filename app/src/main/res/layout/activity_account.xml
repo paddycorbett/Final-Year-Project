@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#363637"
     tools:context=".AccountActivity">
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_height="25dp"
         android:layout_marginTop="24dp"
         android:text="Handicap"
-        android:textColor="#AE0C0C0C"
+        android:textColor="#AEF6F5F5"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toBottomOf="@+id/editTextAccountEmail" />

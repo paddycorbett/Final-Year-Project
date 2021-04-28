@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="2dp"
     android:layout_marginBottom="2dp"
-    android:background="#0091EA">
+    android:background="#77b255"
+    android:padding="2dp">
 
 
     <TextView
         android:id="@+id/textViewCourseName"
         android:layout_width="410dp"
         android:layout_height="50dp"
-        android:background="#225E5E60"
+        android:background="#77b255"
         android:gravity="center_horizontal"
         android:text="TextView"
         android:textAlignment="center"
@@ -29,6 +29,7 @@
         android:id="@+id/textViewCourseAddress"
         android:layout_width="378dp"
         android:layout_height="31dp"
+        android:background="#77b255"
         android:text="TextView"
         android:textSize="20sp"
         android:textStyle="bold"

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,13 +16,11 @@ public class MenuActivity extends AppCompatActivity {
 
 
     FirebaseAuth mAuth;
-    Button round;
-    Button accountSettings;
-    Button pastRounds;
-    TextView userDisplay;
-    Button logOut;
-    Button courses;
-    Button stats;
+    ImageButton newRound;
+    ImageButton pastRounds;
+    ImageButton courses;
+    ImageButton stats;
+
 
 
 
@@ -32,13 +31,10 @@ public class MenuActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-        round = findViewById(R.id.buttonNewRound);
-        accountSettings= findViewById(R.id.buttonAccountSettings);
-        pastRounds = findViewById(R.id.buttonPreviousRounds);
-        userDisplay = findViewById(R.id.textViewUserDisplayName);
-        logOut = findViewById(R.id.buttonLogOut);
-        courses = findViewById(R.id.buttonGolfCourses);
-        stats = findViewById(R.id.buttonStats);
+        newRound = findViewById(R.id.imageButtonStartRound);
+        pastRounds = findViewById(R.id.imageButtonPreviousRounds);
+        courses = findViewById(R.id.imageButtonGolfCourses);
+        stats = findViewById(R.id.imageButtonUserStats);
 
         String username = mAuth.getCurrentUser().getDisplayName();
 
@@ -46,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
 
         //userDisplay.setText(username);
 
-        round.setOnClickListener(new View.OnClickListener() {
+        newRound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i =  new Intent(MenuActivity.this, SelectCourseActivity.class);
@@ -55,13 +51,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        accountSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MenuActivity.this, AccountActivity.class);
-                startActivity(i);
-            }
-        });
+
 
         pastRounds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +61,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        /**
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +72,7 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
+         **/
         courses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

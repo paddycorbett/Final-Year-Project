@@ -61,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Login"
+        android:textColor="#004AAD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
@@ -68,11 +69,12 @@
     <Button
         android:id="@+id/buttonCreateNew"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="142dp"
+        android:layout_height="44dp"
         android:layout_marginTop="53dp"
-        android:background="#00E676"
+        android:background="@android:drawable/btn_default_small"
         android:text="Click me to Register"
+        android:textColor="#004AAD"
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

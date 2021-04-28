@@ -24,6 +24,7 @@ public class Round {
     private int hole17;
     private int hole18;
     private String date;
+    private  String golfCourse;
 
     private int f9Calc;
     private int b9Calc;
@@ -34,7 +35,7 @@ public class Round {
     public Round(){}
 
     public Round( int hole1,int hole2,int hole3,int hole4,int hole5,int hole6,int hole7,int hole8,int hole9,
-                 int hole10,int hole11,int hole12,int hole13,int hole14,int hole15,int hole16,int hole17,int hole18,String date)
+                 int hole10,int hole11,int hole12,int hole13,int hole14,int hole15,int hole16,int hole17,int hole18,String date,String golfCourse)
     {
 
         this.hole1 = hole1;
@@ -56,6 +57,7 @@ public class Round {
         this.hole17 = hole17;
         this.hole18 = hole18;
         this.date = date;
+        this.golfCourse =golfCourse;
 
 
     }
@@ -212,6 +214,14 @@ public class Round {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getGolfCourse() {
+        return golfCourse;
+    }
+
+    public void setGolfCourse(String golfCourse) {
+        this.golfCourse = golfCourse;
     }
 
     public int getF9(int hole1,int hole2,int hole3,int hole4,int hole5,int hole6,int hole7,int hole8,int hole9)

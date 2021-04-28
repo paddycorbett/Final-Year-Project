@@ -39,7 +39,7 @@ public class PastRoundsAdapter extends RecyclerView.Adapter<PastRoundsAdapter.Vi
         TextView front9;
         TextView back9;
         TextView score;
-
+        TextView golfclubName;
 
 
 
@@ -71,6 +71,7 @@ public class PastRoundsAdapter extends RecyclerView.Adapter<PastRoundsAdapter.Vi
             front9 = itemView.findViewById(R.id.tvOut);
             back9 = itemView.findViewById(R.id.tvIn);
             score = itemView.findViewById(R.id.tvTotal);
+            golfclubName = itemView.findViewById(R.id.tvGolfclubNameSC);
 
         }
     }
@@ -137,6 +138,7 @@ public class PastRoundsAdapter extends RecyclerView.Adapter<PastRoundsAdapter.Vi
         holder.hole17.setText(String.valueOf(roundItem.getHole17()));
         holder.hole18.setText(String.valueOf(roundItem.getHole18()));
         holder.date.setText(roundItem.getDate());
+        holder.golfclubName.setText(roundItem.getGolfCourse());
 
         roundItem.setFront9();
         roundItem.setBack9();

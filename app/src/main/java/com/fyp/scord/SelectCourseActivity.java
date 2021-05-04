@@ -37,6 +37,10 @@ public class SelectCourseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_course);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         spinner = findViewById(R.id.spinner);
         startRound = findViewById(R.id.buttonStartRound);
         courses = new ArrayList<>();

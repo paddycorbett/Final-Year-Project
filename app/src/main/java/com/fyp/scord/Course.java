@@ -9,18 +9,15 @@ public class Course {
     private String name;
     private String address;
     private String phoneNumber;
-
-
-
-    private ArrayList<Hole> holes;
+   // private ArrayList<Hole> holes;
 
     public Course(){}
 
-    public Course(String name, String address, String phoneNumber,ArrayList<Hole> holes){
+    public Course(String name, String address, String phoneNumber/**,ArrayList<Hole> holes**/){
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.holes = null;
+        //this.holes = null;
     }
 
     public String getName() {
@@ -47,9 +44,11 @@ public class Course {
         this.phoneNumber = phoneNumber;
     }
 
+    /**
     public ArrayList<Hole> getHoles() {
         return holes;
     }
+     **/
 
 
 

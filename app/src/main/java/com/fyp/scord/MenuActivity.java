@@ -1,11 +1,19 @@
 package com.fyp.scord;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +23,12 @@ public class MenuActivity extends AppCompatActivity {
 
 
     FirebaseAuth mAuth;
-    Button round;
-    Button accountSettings;
-    Button pastRounds;
-    TextView userDisplay;
-    Button logOut;
-    Button courses;
+    ImageButton newRound;
+    ImageButton pastRounds;
+    ImageButton courses;
+    ImageButton stats;
+    ClipData.Item logout;
+
 
 
 
@@ -31,20 +39,24 @@ public class MenuActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-        round = findViewById(R.id.buttonNewRound);
-        accountSettings= findViewById(R.id.buttonAccountSettings);
-        pastRounds = findViewById(R.id.buttonPreviousRounds);
-        userDisplay = findViewById(R.id.textViewUserDisplayName);
-        logOut = findViewById(R.id.buttonLogOut);
-        courses = findViewById(R.id.buttonGolfCourses);
+        newRound = findViewById(R.id.imageButtonStartRound);
+        pastRounds = findViewById(R.id.imageButtonPreviousRounds);
+        courses = findViewById(R.id.imageButtonGolfCourses);
+        stats = findViewById(R.id.imageButtonUserStats);
+        //toolbar = findViewById(R.id.toolbar);
+
 
         String username = mAuth.getCurrentUser().getDisplayName();
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().show();
+        }
 
 
-        userDisplay.setText(username);
 
-        round.setOnClickListener(new View.OnClickListener() {
+        //userDisplay.setText(username);
+
+        newRound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i =  new Intent(MenuActivity.this, SelectCourseActivity.class);
@@ -53,13 +65,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        accountSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MenuActivity.this, AccountActivity.class);
-                startActivity(i);
-            }
-        });
+
 
         pastRounds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,16 +75,8 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                Toast.makeText(MenuActivity.this,"Log Out was Successful",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(MenuActivity.this,MainActivity.class);
-                startActivity(i);
 
-            }
-        });
+
         courses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +84,44 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuActivity.this, StatsActivity.class);
+                startActivity(i);
+            }
+        });
 
+
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.dropdown_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_settings:
+                Intent i = new Intent(MenuActivity.this,UpdateAccountActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_logout:
+                mAuth.signOut();
+                Toast.makeText(MenuActivity.this,"Log Out was Successful",Toast.LENGTH_SHORT).show();
+                Intent itent = new Intent(MenuActivity.this,MainActivity.class);
+                startActivity(itent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+
+        }
 
     }
 }

@@ -7,18 +7,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,6 +84,12 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
     TextView hole17;
     TextView hole18;
 
+    String gCourse;
+    String userUid;
+
+    String holedb;
+    String pardb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +100,8 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
         mDatabase =  FirebaseDatabase.getInstance().getReference();
 
         Intent intent = getIntent();
-        final String gCourse = intent.getStringExtra("Course");
-        final String userUid = user.getUid().toString();
+        gCourse = intent.getStringExtra("Course");
+        userUid = user.getUid().toString();
 
         Date d = new Date();
         final CharSequence d1  = DateFormat.format("MMMM d, yyyy ", d.getTime());
@@ -171,6 +184,28 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
 
                 ArrayList<Integer> roundList = new ArrayList<Integer>();
 
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+                roundList.add(0);
+
+
+
+
                 int h1I = Integer.parseInt(h1.getText().toString()) ;
                 int h2I = Integer.parseInt(h2.getText().toString()) ;
                 int h3I = Integer.parseInt(h3.getText().toString()) ;
@@ -189,7 +224,27 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
                 int h16I = Integer.parseInt(h16.getText().toString()) ;
                 int h17I = Integer.parseInt(h17.getText().toString()) ;
                 int h18I = Integer.parseInt(h18.getText().toString()) ;
-                roundList.add(h1I);
+                roundList.add(h1I,0);
+                roundList.add(h2I,1);
+                roundList.add(h3I,2);
+                roundList.add(h4I,3);
+                roundList.add(h5I,4);
+                roundList.add(h6I,5);
+                roundList.add(h7I,6);
+                roundList.add(h8I,7);
+                roundList.add(h9I,8);
+                roundList.add(h10I,9);
+                roundList.add(h11I,10);
+                roundList.add(h12I,11);
+                roundList.add(h13I,12);
+                roundList.add(h14I,13);
+                roundList.add(h15I,14);
+                roundList.add(h16I,15);
+                roundList.add(h17I,16);
+                roundList.add(h18I,17);
+
+
+
 
 
                 String h1S = h1.getText().toString();
@@ -211,29 +266,21 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
                 String h17S = h17.getText().toString();
                 String h18S = h18.getText().toString();
 
+                round = new Round(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I,d2,gCourse);
+
+                int front9 = round.getF9(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I);
+                int back9 = round.getB9(h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I);
+
+                int totalInt = round.getS(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I);
+
+                out.setText(String.valueOf(front9));
+                in.setText(String.valueOf(back9));
+                total.setText(String.valueOf(totalInt));
 
 
-                round.setHole1(h1I);
-                round.setHole2(h2I);
-                round.setHole3(h3I);
-                round.setHole4(h4I);
-                round.setHole5(h5I);
-                round.setHole6(h6I);
-                round.setHole7(h7I);
-                round.setHole8(h8I);
-                round.setHole9(h9I);
-                round.setHole10(h10I);
-                round.setHole11(h11I);
-                round.setHole12(h12I);
-                round.setHole13(h13I);
-                round.setHole14(h14I);
-                round.setHole15(h15I);
-                round.setHole16(h16I);
-                round.setHole17(h17I);
-                round.setHole18(h18I);
-                round.setDate(d2);
 
 
+                /**
 
                 int front9 = h1I + h2I +h3I +h4I +h5I +h6I +h7I +h8I +h9I;
                 int back9 = h10I + h11I +h12I +h13I +h14I +h15I +h16I +h17I +h18I;
@@ -264,6 +311,7 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
                 }
 
 
+                 **/
 
             }
         });
@@ -298,7 +346,7 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-                round = new Round(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I,d2);
+                round = new Round(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I,d2,gCourse);
                 mDatabase = FirebaseDatabase.getInstance().getReference("Round").child(userUid);
                 String key = mDatabase.push().getKey();
                 mDatabase.child(key).setValue(round).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -312,6 +360,8 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(RoundActivity.this, "Round failed to Save", Toast.LENGTH_LONG).show();
                     }
                 });
+                Intent i = new Intent(RoundActivity.this,MenuActivity.class);
+                startActivity(i);
             }
 
 
@@ -339,103 +389,127 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+
+    public void retrieveHoleInfo(String hNumber,String gCourse){
+        DatabaseReference fireDBLocation = FirebaseDatabase.getInstance().getReference("Course").child(gCourse).child("holes").child(hNumber);
+
+        fireDBLocation.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                holedb = snapshot.child("index").getValue(String.class);
+                pardb = snapshot.child("par").getValue(String.class);
+
+               holeIndex.setText(holedb.toString());
+               holePar.setText(pardb.toString());
+
+
+
+
+
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("DBError", "Cancel Access DB");
+            }
+        });
+
+
+
+
+
+
+    }
+
+
+
+
+
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.textViewH1:
+                retrieveHoleInfo("1",gCourse);
                 holeNumber.setText("1");
-                holeIndex.setText("10");
-                holePar.setText("3");
                 break;
             case R.id.textViewH2:
+                retrieveHoleInfo("2",gCourse);
                 holeNumber.setText("2");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH3:
+                retrieveHoleInfo("3",gCourse);
                 holeNumber.setText("3");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH4:
+                retrieveHoleInfo("4",gCourse);
                 holeNumber.setText("4");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH5:
+                retrieveHoleInfo("5",gCourse);
                 holeNumber.setText("5");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH6:
+                retrieveHoleInfo("6",gCourse);
                 holeNumber.setText("6");
-                holeIndex.setText("15");
-                holePar.setText("3");
                 break;
             case R.id.textViewH7:
+                retrieveHoleInfo("7",gCourse);
                 holeNumber.setText("7");
-                holeIndex.setText("15");
-                holePar.setText("5");
                 break;
             case R.id.textViewH8:
+                retrieveHoleInfo("8",gCourse);
                 holeNumber.setText("8");
-                holeIndex.setText("15");
-                holePar.setText("3");
                 break;
             case R.id.textViewH9:
+                retrieveHoleInfo("9",gCourse);
                 holeNumber.setText("9");
-                holeIndex.setText("15");
-                holePar.setText("5");
                 break;
             case R.id.textViewH10:
+                retrieveHoleInfo("10",gCourse);
                 holeNumber.setText("10");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH11:
+                retrieveHoleInfo("11",gCourse);
                 holeNumber.setText("11");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH12:
+                retrieveHoleInfo("12",gCourse);
                 holeNumber.setText("12");
-                holeIndex.setText("15");
-                holePar.setText("3");
                 break;
             case R.id.textViewH13:
+                retrieveHoleInfo("13",gCourse);
                 holeNumber.setText("13");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH14:
+                retrieveHoleInfo("14",gCourse);
                 holeNumber.setText("14");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH15:
+                retrieveHoleInfo("15",gCourse);
                 holeNumber.setText("15");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
             case R.id.textViewH16:
+                retrieveHoleInfo("16",gCourse);
                 holeNumber.setText("16");
-                holeIndex.setText("15");
-                holePar.setText("4");
                 break;
                 case R.id.textViewH17:
-                holeNumber.setText("17");
-                holeIndex.setText("15");
-                holePar.setText("3");
+                    retrieveHoleInfo("17",gCourse);
+                    holeNumber.setText("17");
                 break;
                 case R.id.textViewH18:
-                holeNumber.setText("18");
-                holeIndex.setText("15");
-                holePar.setText("4");
+                    retrieveHoleInfo("18",gCourse);
+                    holeNumber.setText("18");
                 break;
             default:
                 break;
         }
+
+
 
 
     }

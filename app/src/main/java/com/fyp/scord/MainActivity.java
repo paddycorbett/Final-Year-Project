@@ -3,8 +3,11 @@ package com.fyp.scord;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,13 +34,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mFirebaseAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
         login = findViewById(R.id.buttonRegister);
         register = findViewById(R.id.buttonCreateNew);
 
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,11 +98,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.dropdown_menu,menu);
+        return true;
+    }
 }

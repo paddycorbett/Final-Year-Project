@@ -3,6 +3,7 @@ package com.fyp.scord;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.buttonRegister);
         register = findViewById(R.id.buttonCreateNew);
 
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

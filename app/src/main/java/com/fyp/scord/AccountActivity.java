@@ -62,10 +62,10 @@ public class AccountActivity extends AppCompatActivity {
 
 
                 userObj = new User(nameS,userEmail,handicapS);
-                mDatabase = FirebaseDatabase.getInstance().getReference("User").child(userUid);
+                mDatabase = FirebaseDatabase.getInstance().getReference("User");
                 String key = mDatabase.push().getKey();
 
-                mDatabase.child(key).setValue(userObj).addOnSuccessListener(new OnSuccessListener<Void>() {
+                mDatabase.child(userUid).setValue(userObj).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(AccountActivity.this, "User Profile updated successfully", Toast.LENGTH_LONG).show();

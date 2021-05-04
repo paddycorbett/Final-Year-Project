@@ -569,7 +569,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="88dp"
         android:background="#70CC14"
         android:text="Refresh"
         app:layout_constraintStart_toStartOf="parent"
@@ -669,6 +669,49 @@
         android:text="Overview"
         app:layout_constraintStart_toEndOf="@+id/buttonSaveRound"
         app:layout_constraintTop_toBottomOf="@+id/textViewHoleIndex" />
+
+    <TextView
+        android:id="@+id/textViewhandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="26dp"
+        android:background="#BC050505"
+        android:text="Handicap"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextS11" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="130sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="14dp"
+        android:background="#BC050505"
+        android:text="Handicap Score"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewScoreOverall" />
+
+    <TextView
+        android:id="@+id/textViewHandicapScore"
+        android:layout_width="130sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="#BCF8F7F7"
+        android:gravity="center"
+        android:text="20"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

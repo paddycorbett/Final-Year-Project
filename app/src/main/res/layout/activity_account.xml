@@ -4,42 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#363637"
+    android:background="#77b255"
     tools:context=".AccountActivity">
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="300dp"
         android:layout_height="25dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:text="Full Name"
         android:textColor="#AE0C0C0C"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="300dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="24dp"
-        android:text="Email"
-        android:textColor="#AE0C0C0C"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAccountFullName" />
-
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="300dp"
         android:layout_height="25dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="Handicap"
-        android:textColor="#AEF6F5F5"
+        android:textColor="#AE090909"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAccountEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAccountFullName" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -47,21 +36,10 @@
         android:layout_height="25dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user_profile_icon" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAccountFullName"
-        app:srcCompat="@drawable/email_icon" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -69,15 +47,15 @@
         android:layout_height="25dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAccountEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAccountFullName"
         app:srcCompat="@drawable/golf_pin_icon" />
 
     <EditText
         android:id="@+id/editTextAccountFullName"
         android:layout_width="300dp"
-        android:layout_height="25dp"
+        android:layout_height="40dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginTop="8dp"
@@ -88,22 +66,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextAccountEmail"
-        android:layout_width="300dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginLeft="67dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <EditText
         android:id="@+id/editTextAccountHandicap"
         android:layout_width="300dp"
-        android:layout_height="25dp"
+        android:layout_height="40dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginTop="8dp"
@@ -122,5 +87,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextAccountHandicap" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scord_logo_no_bck" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Please update profile below"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

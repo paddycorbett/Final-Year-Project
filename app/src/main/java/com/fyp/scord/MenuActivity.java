@@ -1,9 +1,16 @@
 package com.fyp.scord;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,6 +27,7 @@ public class MenuActivity extends AppCompatActivity {
     ImageButton pastRounds;
     ImageButton courses;
     ImageButton stats;
+    ClipData.Item logout;
 
 
 
@@ -35,8 +43,14 @@ public class MenuActivity extends AppCompatActivity {
         pastRounds = findViewById(R.id.imageButtonPreviousRounds);
         courses = findViewById(R.id.imageButtonGolfCourses);
         stats = findViewById(R.id.imageButtonUserStats);
+        //toolbar = findViewById(R.id.toolbar);
+
 
         String username = mAuth.getCurrentUser().getDisplayName();
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().show();
+        }
 
 
 
@@ -61,18 +75,8 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        /**
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                Toast.makeText(MenuActivity.this,"Log Out was Successful",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(MenuActivity.this,MainActivity.class);
-                startActivity(i);
 
-            }
-        });
-         **/
+
         courses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +92,36 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.dropdown_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_settings:
+                Intent i = new Intent(MenuActivity.this,UpdateAccountActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_logout:
+                mAuth.signOut();
+                Toast.makeText(MenuActivity.this,"Log Out was Successful",Toast.LENGTH_SHORT).show();
+                Intent itent = new Intent(MenuActivity.this,MainActivity.class);
+                startActivity(itent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+
+        }
 
     }
 }

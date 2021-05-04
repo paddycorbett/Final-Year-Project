@@ -17,7 +17,8 @@
         android:roundIcon="@drawable/scord_logo_app_tile"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StatsActivity"></activity>
+        <activity android:name=".UpdateAccountActivity" />
+        <activity android:name=".StatsActivity" />
         <activity android:name=".SelectCourseActivity" />
         <activity android:name=".AddCoursesActivity" />
         <activity android:name=".CoursesActivity" />

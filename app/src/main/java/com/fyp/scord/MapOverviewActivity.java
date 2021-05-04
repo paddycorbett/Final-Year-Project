@@ -130,7 +130,7 @@ public class MapOverviewActivity extends FragmentActivity implements OnMapReadyC
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        retreiveHoleTeeLocation(hNumber);
+        retreiveHoleTeeLocation(hNumber,gCourse);
 
 
     }
@@ -268,8 +268,8 @@ public class MapOverviewActivity extends FragmentActivity implements OnMapReadyC
 
     }
 
-    public void retreiveHoleTeeLocation(String hNumber){
-        DatabaseReference fireDBLocation = FirebaseDatabase.getInstance().getReference("Course").child("1").child("holes").child(hNumber);
+    public void retreiveHoleTeeLocation(String hNumber, String gCourse){
+        DatabaseReference fireDBLocation = FirebaseDatabase.getInstance().getReference("Course").child(gCourse).child("holes").child(hNumber);
 
         fireDBLocation.addValueEventListener(new ValueEventListener() {
             @Override
@@ -384,12 +384,12 @@ public class MapOverviewActivity extends FragmentActivity implements OnMapReadyC
     }
 
 
-    public void checkHole(String hNumber)
+    public void checkHole(String hNumber, String gCourse)
     {
        // retrieveTeeLocationFireBase(hNumber);
        // retrieveHoleLocationFireBase(hNumber);
 
-        retreiveHoleTeeLocation(hNumber);
+        retreiveHoleTeeLocation(hNumber,gCourse);
 
 
 

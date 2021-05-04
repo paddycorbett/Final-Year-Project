@@ -707,7 +707,6 @@
         android:layout_marginLeft="5dp"
         android:background="#BCF8F7F7"
         android:gravity="center"
-        android:text="20"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

@@ -295,7 +295,7 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
 
                 int totalInt = round.getS(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I);
 
-                int handicapIntSum = (handicapInt - totalInt );
+                int handicapIntSum = (Math.abs(handicapInt - totalInt) );
 
                 out.setText(String.valueOf(front9));
                 in.setText(String.valueOf(back9));

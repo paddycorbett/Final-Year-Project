@@ -83,12 +83,17 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
     TextView hole16;
     TextView hole17;
     TextView hole18;
+    TextView handicap;
+    TextView handicapScore;
 
     String gCourse;
     String userUid;
 
     String holedb;
     String pardb;
+
+    String currentHandicap;
+    int handicapInt;
 
 
     @Override
@@ -174,6 +179,23 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
         hole17.setOnClickListener(this);
         hole18 = findViewById(R.id.textViewH18);
         hole18.setOnClickListener(this);
+
+        handicap = findViewById(R.id.textViewhandicap);
+        handicapScore = findViewById(R.id.textViewHandicapScore);
+        DatabaseReference getCurrentHandicap = FirebaseDatabase.getInstance().getReference("User").child(userUid).child("handicap");
+        getCurrentHandicap.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                currentHandicap = snapshot.getValue(String.class);
+                handicap.setText("Handicap: " + currentHandicap);
+                handicapInt = Integer.parseInt(currentHandicap);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
 
@@ -273,9 +295,13 @@ public class RoundActivity extends AppCompatActivity implements View.OnClickList
 
                 int totalInt = round.getS(h1I,h2I,h3I,h4I,h5I,h6I,h7I,h8I,h9I,h10I,h11I,h12I,h13I,h14I,h15I,h16I,h17I,h18I);
 
+                int handicapIntSum = (handicapInt - totalInt );
+
                 out.setText(String.valueOf(front9));
                 in.setText(String.valueOf(back9));
                 total.setText(String.valueOf(totalInt));
+                handicapScore.setText(String.valueOf(handicapIntSum));
+
 
 
 
